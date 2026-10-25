@@ -1,0 +1,12 @@
+package:com.amazon.amazonvideo.livingroom
+package:com.disney.disneyplus
+package:com.google.android.youtube.tv
+package:com.google.android.youtube.tvmusic
+package:com.google.android.youtube.tvunplugged
+package:com.hulu.livingroomplus
+package:com.netflix.ninja
+package:com.peacocktv.peacockandroid
+package:com.plexapp.android
+package:com.spocky.projengmenu
+package:com.tubitv
+package:com.wbd.stream

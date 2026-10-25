@@ -1,0 +1,33 @@
+# Packages debloat.sh disables (undo.sh re-enables). One per line; '#' starts a comment.
+# Built from the Chromecast with Google TV 4K (sabrina), Android 14, UTTC.250917.004.
+
+# --- Safe: unused on this device, nothing depends on them ---
+com.google.android.play.games                   # Play Games
+com.google.android.feedback                     # Sends feedback/crash reports to Google
+com.android.tv.feedbackconsent                  # Consent screen for the above
+com.google.android.tv.remotecontrol.logging     # Remote-control usage logging
+com.android.printspooler                        # Printing
+com.google.android.marvin.talkback              # TalkBack screen reader (re-enable if ever needed)
+
+# --- Chosen 2026-10-25: Russ keeps only Plex, YouTube, Max, Hulu, Peacock ---
+com.google.android.apps.tv.dreamx               # Ambient-mode screensaver (shows recommendations); falls back to the basic one
+com.google.android.videos                       # Google TV store/rentals; breaks the Shop tab and past purchases
+com.google.android.katniss                      # Google Assistant / voice search; the remote's mic button stops working
+com.tubitv                                      # Tubi
+com.netflix.ninja                               # Netflix
+com.disney.disneyplus                           # Disney+
+com.amazon.amazonvideo.livingroom               # Prime Video
+com.google.android.youtube.tvmusic              # YouTube Music
+com.google.android.youtube.tvunplugged          # YouTube TV
+
+# --- Home screen: replaced by Projectivy Launcher (com.spocky.projengmenu, install it first) ---
+com.google.android.apps.tv.launcherx            # Google TV home screen: ads and recommendations
+com.google.android.tungsten.setupwraith         # Setup wizard; its RecoveryActivity hijacks Home when launcherx is off. A factory reset restores it
+
+# --- Never disable (listed so nobody adds them) ---
+# com.google.android.gms, gsf, com.android.vending   Play Services/Store: every app needs them, and the Store is how apps get installed
+# com.google.android.webview                         Sign-in pages in apps
+# com.google.android.rkpdapp                          DRM key provisioning: HD/4K playback in Netflix etc.
+# com.google.android.apps.mediashell                  The Cast receiver itself
+# com.google.android.tv.dfuservice                    Remote firmware updates
+# com.google.android.configupdater, packageinstaller  Updates and installs
