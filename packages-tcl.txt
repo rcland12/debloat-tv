@@ -1,0 +1,59 @@
+# Packages debloat.sh disables (undo.sh re-enables). One per line; '#' starts a comment.
+# Built from the TCL 75Q651G (G10), Android 12, STT2.230203.001/AS112. A shared TV, so Google
+# Assistant stays. Only 1.8 GB of RAM, which is why the stock home screen goes.
+# Kept: YouTube, YouTube TV, Plex, ESPN, Netflix, Max, Peacock, Hulu.
+
+# --- TCL tracking, store demo and promo apps ---
+tv.samba.ssm.ui                                 # Samba TV: watches what's on screen for ad targeting (ACR)
+com.tcl.exhibit                                 # Store demo mode
+com.tcl.esticker                                # Store demo stickers
+com.tcl.channelplus                             # TCL Live free channels
+com.tcl.tv.plus                                 # TCL TV+ free channels
+com.tcl.repairguide                             # Repair guide
+com.tcl.ocean.instructions                      # On-screen manual
+com.tcl.hotelmenu                               # Hotel mode
+com.tcl.smartalexa                              # Alexa integration
+com.tcl.logkit                                  # TCL log collection
+com.tcl.messagebox                              # TCL promo notifications
+com.tcl.usercenter                              # TCL account service
+
+# --- Google extras ---
+com.google.android.play.games                   # Play Games
+com.google.android.feedback                     # Sends feedback/crash reports to Google
+com.android.printspooler                        # Printing
+com.google.android.marvin.talkback              # TalkBack screen reader (re-enable if ever needed)
+com.google.android.youtube.tvmusic              # YouTube Music
+
+# --- Apps preinstalled or added at first setup (2025-10-14), not on the keep list ---
+com.amazon.amazonvideo.livingroom               # Prime Video
+com.disney.disneyplus                           # Disney+
+com.tubitv                                      # Tubi
+com.spotify.tv.android                          # Spotify
+com.crunchyroll.crunchyroid                     # Crunchyroll
+
+# --- Installed later, not on the keep list (re-enable in Play Store or with undo.sh) ---
+com.sling                                       # Sling (2025-11-01)
+com.roku.web.trc                                # The Roku Channel (2025-12-30)
+com.ionitech.airscreen                          # AirScreen, AirPlay/cast receiver (2026-02-23)
+com.formulaone.production                       # F1 TV (2026-03-07)
+com.apple.atve.androidtv.appletv                # Apple TV (2026-03-08)
+com.ncaa.mmlive.app                             # NCAA March Madness Live (2026-03-19)
+com.instagram.airwave                           # Instagram (2026-03-29)
+com.fox.foxone                                  # Fox One (2026-07-15)
+com.stremio.one                                 # Stremio (2026-08-18)
+
+# --- Home screen: replaced by Projectivy Launcher (com.spocky.projengmenu, install it first) ---
+com.google.android.apps.tv.launcherx            # Google TV home screen: ads, Freeplay, ~110 MB of RAM
+com.google.android.tungsten.setupwraith         # Setup wizard; its RecoveryActivity hijacks Home when launcherx is off
+com.tcl.partnercustomizer                       # TCL's customizations for the Google home screen
+com.tcl.tv.tclhome_passive                      # "TCL Home" tile: TCL's promo home page
+com.google.android.apps.tv.dreamx               # Ambient-mode screensaver (recommendations); falls back to the basic one
+com.google.android.videos                       # Google TV app: Freeplay channels, store and rentals
+
+# --- Never disable ---
+# com.google.android.gms, gsf, com.android.vending   Play Services/Store
+# com.google.android.webview, com.google.android.katniss (Assistant)
+# com.tcl.tv, com.tcl.tvinput, com.tvos              Live TV and the HDMI inputs
+# com.tcl.dashboard, com.tcl.suspension              Picture/sound settings and the quick panel
+# com.tcl.systemserver, com.tcl.guard, com.tcl.initsetup, com.tcl.factory.view
+# com.netflix.tokenmanager                           Netflix sign-in
