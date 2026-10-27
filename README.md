@@ -32,6 +32,7 @@ Needs bash (Linux or macOS) and a Google TV device with Developer options on.
     ./undo.sh                # re-enable everything in the list
     ./undo.sh <package>      # re-enable one
     ./ui.sh                  # print the text on the TV's screen
+    ./home.sh google         # switch home screens (google or projectivy)
 
 A few packages are protected from disabling; `debloat.sh` falls back to `pm uninstall -k --user 0`
 (also reversible, and `undo.sh` handles both). Packages listed by `pm list packages` but "not
@@ -50,7 +51,23 @@ first row):
 
     tools/platform-tools/adb -s "$DEVICE" shell cmd package set-home-activity --user 0 com.spocky.projengmenu/.ui.home.MainActivity
 
-Back to stock: `./undo.sh com.google.android.tungsten.setupwraith` and
+To switch between the two without touching the rest of the debloat:
+
+    ./home.sh google         # re-enable the Google TV home (and setupwraith) and make it the default
+    ./home.sh projectivy     # back to Projectivy; disables launcherx and setupwraith again
+
+`setupwraith` also serves some Settings pages (the account's Apps & services, Apps only mode),
+which show "Unavailable" while it's disabled, so it comes back with the Google home.
+The Google home still shows Freeplay and recommendations (they're built into `launcherx`). Its
+Apps only mode (Settings > Accounts & sign-in > the account) hides them. `debloat.sh` skips
+the current home screen, and `setupwraith` while that's `launcherx`, so rerunning it doesn't undo
+`home.sh google`.
+
+Behind Pi-hole or another DNS blocker, Apps & services spins and then shows "Error loading page"
+if `androidtvlauncherxfe-pa.googleapis.com` (the Google home's backend) is blocked. Allow it for
+the TV only, e.g. with a Pi-hole group.
+
+Fully back to stock: `./undo.sh com.google.android.tungsten.setupwraith` and
 `./undo.sh com.google.android.apps.tv.launcherx`, then uninstall Projectivy.
 
 `adb exec-out screencap -p > shots/x.png` takes a screenshot of the TV (`shots/` is gitignored).
